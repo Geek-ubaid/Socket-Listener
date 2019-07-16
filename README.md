@@ -19,4 +19,16 @@ Reference link:  https://www.sparkfun.com/tutorials/403
 
 ![sockets](https://user-images.githubusercontent.com/31818185/61246696-15c4be80-a76d-11e9-960b-a29e186526ae.png)
 
+## How to run
+``` python
+>> python server.py
+```
+> Log on to https://localhost:3000/login
+
+### Dependencies
+To install all the dependencies use the requirement.txt provided and use the following command.
+``` python
+>> pip install -r requirement.txt
+'''
+
 
