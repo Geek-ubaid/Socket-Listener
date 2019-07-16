@@ -19,6 +19,4 @@ Reference link:  https://www.sparkfun.com/tutorials/403
 
 ![sockets](https://user-images.githubusercontent.com/31818185/61246696-15c4be80-a76d-11e9-960b-a29e186526ae.png)
 
-https://secdevops.ai/weekend-project-part-2-turning-flask-into-a-real-time-websocket-server-using-flask-socketio-ab6b45f1d896
 
-https://github.com/L04DB4L4NC3R/chat-app/blob/master/views/chatting.ejs
