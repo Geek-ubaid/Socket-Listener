@@ -1,0 +1,91 @@
+<html>
+  <head>
+
+    <title>Flask Intro - login page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+  </head>
+  <body>
+    
+    <div class="container">
+      <h1>Please login</h1>
+      <br>
+        <input type="text" placeholder="Username" name="username" id="username" >
+         <input type="password" placeholder="Password" name="password" id="password">
+         <button id="btn">Submit</button>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+
+
+    <script>
+        $("#btn").on("click", (e) => {alert("clicked")
+                    e.preventDefault()
+                    WebSocketTest()
+          });
+
+         function WebSocketTest() {
+            var count, time
+            var username = $("#username").val()
+            var password = $("#password").val()
+            
+            $(document).ready(function() {
+         
+           // sending a connect request to the server.
+           var socket = io('http://localhost:3000');
+
+           socket.on('connect',function(){
+            time = new Date()
+            count = 0
+                    // Web Socket is connected, send data using send(;
+            alert("Message is sent...");
+            console.log("connected");
+            socket.emit('client_connected',{data:{'username':username,'pasword':password}});
+          });
+
+          socket.on('response',function(data){
+            if (count > 3)
+                $.get("/restart", (console.log))
+
+              var d2 = new Date()
+              var diff = d2.getTime() - time.getTime()
+              if (Math.floor(diff/1000) > 5 ) 
+                count++
+
+              var received_msg = data;
+              console.log(received_msg)
+              if (data == 200)
+                alert("Message is received...");
+              else {
+                alert("retrying message")
+                count++
+                time = new Date()
+                socket.emit('client_connected',{data:username});
+
+            }});
+
+     
+         
+           socket.on('disconnect', function(msg) {
+            alert("Connection is closed..."); 
+           });
+               
+     });
+
+    };
+               
+              
+               // Let us open a web socket
+        
+              
+              
+              
+      </script>
+
+  </body>
+</html>
+
+
