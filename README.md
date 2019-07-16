@@ -26,7 +26,21 @@ Reference link:  https://www.sparkfun.com/tutorials/403
 > Log on to https://localhost:3000/login
 
 ### Dependencies
-To install all the dependencies use the requirement.txt provided and use the following command.
+To install all the dependencies do the following step:
+1. Create venv using virtualenv
+``` cmd 
+virtualenv [env_name]
+```
+Activate the env by 
+``` cmd
+cd [env_name]/scripts
+```
+And activate env using
+```cmd
+activate
+```
+
+2. use the requirement.txt provided and use the following command.
 ``` python
 >> pip install -r requirement.txt
 ```
