@@ -29,6 +29,6 @@ Reference link:  https://www.sparkfun.com/tutorials/403
 To install all the dependencies use the requirement.txt provided and use the following command.
 ``` python
 >> pip install -r requirement.txt
-'''
+```
 
 
